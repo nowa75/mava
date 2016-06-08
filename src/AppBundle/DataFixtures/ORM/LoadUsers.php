@@ -10,16 +10,13 @@
 
 namespace AppBundle\DataFixtures\ORM;
 use AppBundle\Entity\User;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadUsers implements FixtureInterface
+class LoadUsers extends AbstractFixture implements OrderedFixtureInterface
 {
-
-    function __construct()
-    {
-
-    }
 
     /**
      * Load data fixtures with the passed EntityManager
@@ -39,5 +36,17 @@ class LoadUsers implements FixtureInterface
         $user2->setEmail('jack@mava.info');
         $manager->persist($user2);
         $manager->flush();
+        $this->addReference('John', $user1);
+        $this->addReference('Jack', $user2);
+    }
+
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
+    public function getOrder()
+    {
+        return 30;
     }
 }
