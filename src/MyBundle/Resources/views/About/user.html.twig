@@ -1,0 +1,9 @@
+{# mava/src/MyBundle/Resouces/views/About/user.html.twig #}
+<h1>User Profile</h1>
+<strong>Name: </strong>{{ user.name }} <br/>
+<strong>Bio: </strong>{{ user.bio }} <br/>
+<button
+        type="button"
+        onclick="location.href='./{{user.name}}/details'">
+    more
+</button>

@@ -1,0 +1,61 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Workspace
+ *
+ * @ORM\Table(name="workspace")
+ * @ORM\Entity
+ */
+class Workspace
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=45, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=255, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="due_date", type="datetime", nullable=false)
+     */
+    private $dueDate;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="attachment", type="boolean", nullable=true)
+     */
+    private $attachment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="workspace_id", type="string", length=45, nullable=true)
+     */
+    private $workspaceId;
+
+
+}
+
