@@ -1,11 +1,16 @@
-my_homepage:
+app_homepage:
   path:     /
   defaults: { _controller: AppBundle:Default:index }
 
-my_about:
+app_about:
   path:     /about/{name}
   defaults: { _controller: AppBundle:About:user, name:null}
 
-my_about_more:
+app_about_more:
   path:     /about/{name}/details
   defaults: { _controller: AppBundle:About:details}
+
+workspace_show:
+  path:     /workspace/{name}
+  defaults: { _controller: AppBundle:Workspace:show, project:null}
+

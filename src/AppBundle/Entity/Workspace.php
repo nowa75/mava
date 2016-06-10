@@ -38,7 +38,7 @@ class Workspace
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="due_date", type="datetime", nullable=false)
+     * @ORM\Column(name="due_date", type="datetime", nullable=true)
      */
     private $dueDate;
 

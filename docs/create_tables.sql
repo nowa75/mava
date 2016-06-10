@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `mava`.`workspace` (
   `id` INT NOT NULL,
   `title` VARCHAR(45) NOT NULL,
   `description` TINYTEXT NOT NULL,
-  `due_date` DATETIME NOT NULL,
+  `due_date` DATETIME NULL,
   `attachment` TINYINT(1) NULL,
   `workspace_id` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
